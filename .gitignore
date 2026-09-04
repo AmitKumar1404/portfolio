@@ -1,5 +1,6 @@
 # macOS
 .DS_Store
+Thumbs.db
 
 # IDE
 .idea/
@@ -13,9 +14,11 @@
 # Node
 frontend/node_modules/
 frontend/dist/
+frontend/dist-ssr/
 
 # Java / Spring Boot
 backend/target/
 
 # Logs
+logs/
 *.log
