@@ -20,3 +20,13 @@ export interface ProfileResponse {
   avatarUrl: string | null
   availability: Availability
 }
+
+export interface ProjectResponse {
+  slug: string
+  title: string
+  shortDescription: string
+  featured: boolean
+  displayOrder: number
+  githubUrl: string | null
+  liveUrl: string | null
+}

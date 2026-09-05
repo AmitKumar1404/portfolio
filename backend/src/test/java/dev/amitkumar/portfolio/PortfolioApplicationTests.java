@@ -6,6 +6,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import dev.amitkumar.portfolio.profile.ProfileRepository;
+import dev.amitkumar.portfolio.project.ProjectRepository;
 
 @SpringBootTest
 @ActiveProfiles("test")
@@ -13,6 +14,9 @@ class PortfolioApplicationTests {
 
     @MockitoBean
     private ProfileRepository profileRepository;
+
+    @MockitoBean
+    private ProjectRepository projectRepository;
 
     @Test
     void contextLoads() {

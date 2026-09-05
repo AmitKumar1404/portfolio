@@ -13,6 +13,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import dev.amitkumar.portfolio.profile.ProfileRepository;
+import dev.amitkumar.portfolio.project.ProjectRepository;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -24,6 +25,9 @@ class SecurityConfigTest {
 
     @MockitoBean
     private ProfileRepository profileRepository;
+
+    @MockitoBean
+    private ProjectRepository projectRepository;
 
     @Test
     void healthIsPublicAndUp() throws Exception {
