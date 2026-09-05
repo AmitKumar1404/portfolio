@@ -12,6 +12,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import dev.amitkumar.portfolio.experience.ExperienceRepository;
 import dev.amitkumar.portfolio.profile.ProfileRepository;
 import dev.amitkumar.portfolio.project.ProjectRepository;
 
@@ -29,6 +30,9 @@ class SecurityConfigTest {
     @MockitoBean
     private ProjectRepository projectRepository;
 
+    @MockitoBean
+    private ExperienceRepository experienceRepository;
+
     @Test
     void healthIsPublicAndUp() throws Exception {
         mockMvc.perform(get("/actuator/health"))
@@ -40,5 +44,12 @@ class SecurityConfigTest {
     void unmappedAdminPathIsUnauthorized() throws Exception {
         mockMvc.perform(get("/admin/projects"))
                 .andExpect(status().isUnauthorized());
+    }
+
+    @Test
+    void experiencesArePublic() throws Exception {
+        mockMvc.perform(get("/api/v1/experiences"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").isArray());
     }
 }

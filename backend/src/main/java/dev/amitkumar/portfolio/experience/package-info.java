@@ -1,4 +1,4 @@
 /**
- * Work experience. Public APIs land in Phase 2.
+ * Work experience. Public read API: {@code GET /api/v1/experiences}.
  */
 package dev.amitkumar.portfolio.experience;
