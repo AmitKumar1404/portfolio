@@ -17,6 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import dev.amitkumar.portfolio.experience.ExperienceRepository;
 import dev.amitkumar.portfolio.project.ProjectRepository;
+import dev.amitkumar.portfolio.skill.SkillRepository;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -34,6 +35,9 @@ class ProfileControllerTest {
 
     @MockitoBean
     private ExperienceRepository experienceRepository;
+
+    @MockitoBean
+    private SkillRepository skillRepository;
 
     @Test
     void getProfileWhenPresentReturns200() throws Exception {

@@ -8,6 +8,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import dev.amitkumar.portfolio.experience.ExperienceRepository;
 import dev.amitkumar.portfolio.profile.ProfileRepository;
 import dev.amitkumar.portfolio.project.ProjectRepository;
+import dev.amitkumar.portfolio.skill.SkillRepository;
 
 @SpringBootTest
 @ActiveProfiles("test")
@@ -21,6 +22,9 @@ class PortfolioApplicationTests {
 
     @MockitoBean
     private ExperienceRepository experienceRepository;
+
+    @MockitoBean
+    private SkillRepository skillRepository;
 
     @Test
     void contextLoads() {

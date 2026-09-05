@@ -46,3 +46,10 @@ export interface ExperienceResponse {
   highlights: string[]
   displayOrder: number
 }
+
+export interface SkillResponse {
+  category: string
+  slug: string
+  displayOrder: number
+  skills: string[]
+}

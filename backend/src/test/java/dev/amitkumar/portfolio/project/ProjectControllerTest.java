@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import dev.amitkumar.portfolio.experience.ExperienceRepository;
 import dev.amitkumar.portfolio.profile.ProfileRepository;
+import dev.amitkumar.portfolio.skill.SkillRepository;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -36,6 +37,9 @@ class ProjectControllerTest {
 
     @MockitoBean
     private ExperienceRepository experienceRepository;
+
+    @MockitoBean
+    private SkillRepository skillRepository;
 
     @Test
     void getProjectsReturns200InDisplayOrder() throws Exception {

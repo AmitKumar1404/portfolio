@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import dev.amitkumar.portfolio.experience.ExperienceRepository;
 import dev.amitkumar.portfolio.profile.ProfileRepository;
 import dev.amitkumar.portfolio.project.ProjectRepository;
+import dev.amitkumar.portfolio.skill.SkillRepository;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -33,6 +34,9 @@ class SecurityConfigTest {
     @MockitoBean
     private ExperienceRepository experienceRepository;
 
+    @MockitoBean
+    private SkillRepository skillRepository;
+
     @Test
     void healthIsPublicAndUp() throws Exception {
         mockMvc.perform(get("/actuator/health"))
@@ -49,6 +53,13 @@ class SecurityConfigTest {
     @Test
     void experiencesArePublic() throws Exception {
         mockMvc.perform(get("/api/v1/experiences"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").isArray());
+    }
+
+    @Test
+    void skillsArePublic() throws Exception {
+        mockMvc.perform(get("/api/v1/skills"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$").isArray());
     }

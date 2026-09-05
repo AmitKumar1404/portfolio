@@ -18,6 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import dev.amitkumar.portfolio.profile.ProfileRepository;
 import dev.amitkumar.portfolio.project.ProjectRepository;
+import dev.amitkumar.portfolio.skill.SkillRepository;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -35,6 +36,9 @@ class ExperienceControllerTest {
 
     @MockitoBean
     private ProjectRepository projectRepository;
+
+    @MockitoBean
+    private SkillRepository skillRepository;
 
     @Test
     void getExperiencesReturns200WithPublicFields() throws Exception {

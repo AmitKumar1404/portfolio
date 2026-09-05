@@ -1,4 +1,4 @@
 /**
- * Skill taxonomy. Public APIs land in Phase 2.
+ * Skill taxonomy. Public read API: {@code GET /api/v1/skills}.
  */
 package dev.amitkumar.portfolio.skill;
