@@ -6,6 +6,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import dev.amitkumar.portfolio.contact.ContactMessageRepository;
+import dev.amitkumar.portfolio.github.GithubCacheRepository;
 import dev.amitkumar.portfolio.experience.ExperienceRepository;
 import dev.amitkumar.portfolio.profile.ProfileRepository;
 import dev.amitkumar.portfolio.project.ProjectRepository;
@@ -29,6 +30,9 @@ class PortfolioApplicationTests {
 
     @MockitoBean
     private ContactMessageRepository contactMessageRepository;
+
+    @MockitoBean
+    private GithubCacheRepository githubCacheRepository;
 
     @Test
     void contextLoads() {

@@ -1,4 +1,4 @@
 /**
- * GitHub activity cache and proxy. Integration lands in Phase 5.
+ * Public GitHub activity. Read API: {@code GET /api/v1/github/activity}.
  */
 package dev.amitkumar.portfolio.github;

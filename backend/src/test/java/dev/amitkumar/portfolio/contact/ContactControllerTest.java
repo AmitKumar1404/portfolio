@@ -18,6 +18,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import dev.amitkumar.portfolio.github.GithubCacheRepository;
 import dev.amitkumar.portfolio.experience.ExperienceRepository;
 import dev.amitkumar.portfolio.profile.ProfileRepository;
 import dev.amitkumar.portfolio.project.ProjectRepository;
@@ -45,6 +46,9 @@ class ContactControllerTest {
 
     @MockitoBean
     private SkillRepository skillRepository;
+
+    @MockitoBean
+    private GithubCacheRepository githubCacheRepository;
 
     @Test
     void validAnonymousSubmissionReturns201AndCallsService() throws Exception {

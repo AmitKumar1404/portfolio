@@ -17,6 +17,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import dev.amitkumar.portfolio.contact.ContactMessageRepository;
+import dev.amitkumar.portfolio.github.GithubCacheRepository;
 import dev.amitkumar.portfolio.profile.ProfileRepository;
 import dev.amitkumar.portfolio.project.ProjectRepository;
 import dev.amitkumar.portfolio.skill.SkillRepository;
@@ -43,6 +44,9 @@ class ExperienceControllerTest {
 
     @MockitoBean
     private ContactMessageRepository contactMessageRepository;
+
+    @MockitoBean
+    private GithubCacheRepository githubCacheRepository;
 
     @Test
     void getExperiencesReturns200WithPublicFields() throws Exception {

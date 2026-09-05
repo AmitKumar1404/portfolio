@@ -64,3 +64,31 @@ export interface ContactRequest {
 export interface ContactResponse {
   id: number
 }
+
+export type GithubActivityType =
+  | 'PUSH'
+  | 'PULL_REQUEST'
+  | 'ISSUE'
+  | 'COMMENT'
+  | 'CREATE'
+  | 'RELEASE'
+  | 'FORK'
+  | 'STAR'
+  | 'OTHER'
+
+export interface GithubActivityItemResponse {
+  type: GithubActivityType
+  repoName: string
+  repoUrl: string
+  message: string
+  createdAt: string
+}
+
+export interface GithubActivityResponse {
+  username: string
+  profileUrl: string
+  activities: GithubActivityItemResponse[]
+  source: string
+  cached: boolean
+  stale: boolean
+}

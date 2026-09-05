@@ -13,10 +13,16 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
+
+import java.util.List;
+
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import dev.amitkumar.portfolio.contact.ContactMessageRepository;
+import dev.amitkumar.portfolio.github.GithubActivityResponse;
+import dev.amitkumar.portfolio.github.GithubActivityService;
+import dev.amitkumar.portfolio.github.GithubCacheRepository;
 import dev.amitkumar.portfolio.contact.ContactRequest;
 import dev.amitkumar.portfolio.contact.ContactResponse;
 import dev.amitkumar.portfolio.contact.ContactService;
@@ -50,6 +56,12 @@ class SecurityConfigTest {
 
     @MockitoBean
     private ContactService contactService;
+
+    @MockitoBean
+    private GithubCacheRepository githubCacheRepository;
+
+    @MockitoBean
+    private GithubActivityService githubActivityService;
 
     @Test
     void healthIsPublicAndUp() throws Exception {
@@ -94,5 +106,20 @@ class SecurityConfigTest {
                                 """))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id").value(42));
+    }
+
+    @Test
+    void githubActivityIsPublic() throws Exception {
+        when(githubActivityService.getActivity()).thenReturn(new GithubActivityResponse(
+                "AmitKumar1404",
+                "https://github.com/AmitKumar1404",
+                List.of(),
+                "github",
+                true,
+                false));
+
+        mockMvc.perform(get("/api/v1/github/activity"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.username").value("AmitKumar1404"));
     }
 }
