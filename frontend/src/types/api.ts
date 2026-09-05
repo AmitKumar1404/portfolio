@@ -4,6 +4,16 @@ export interface HealthResponse {
   status: HealthStatus
 }
 
+export interface ApiError {
+  timestamp: string
+  status: number
+  error: string
+  code: string
+  message: string
+  path: string
+  fieldErrors?: Record<string, string>
+}
+
 export type Availability = 'OPEN' | 'SELECTIVE' | 'UNAVAILABLE'
 
 export interface ProfileResponse {
