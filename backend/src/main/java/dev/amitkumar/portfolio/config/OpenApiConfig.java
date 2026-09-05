@@ -16,7 +16,7 @@ public class OpenApiConfig {
                 .info(new Info()
                         .title("Amit Kumar — Portfolio API")
                         .version("v1")
-                        .description("Public API for the Amit Kumar portfolio. Domain endpoints arrive in Phase 2.")
+                        .description("Public API for the Amit Kumar portfolio.")
                         .contact(new Contact().name("Amit Kumar")));
     }
 }

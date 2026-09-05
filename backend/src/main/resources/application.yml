@@ -47,3 +47,10 @@ app:
     allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
   security:
     ip-hash-pepper: ${APP_IP_HASH_PEPPER:}
+  github:
+    username: ${GITHUB_USERNAME:AmitKumar1404}
+    api-base-url: ${GITHUB_API_BASE_URL:https://api.github.com}
+    connect-timeout: 3s
+    read-timeout: 5s
+    cache-ttl: 15m
+    max-activities: 15

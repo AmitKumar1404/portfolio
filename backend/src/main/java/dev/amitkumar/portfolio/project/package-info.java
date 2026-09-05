@@ -1,4 +1,4 @@
 /**
- * Project catalog and case-study domain. Public APIs land in Phase 2.
+ * Project catalog. Public read APIs: {@code GET /api/v1/projects} and {@code GET /api/v1/projects/{slug}}.
  */
 package dev.amitkumar.portfolio.project;
