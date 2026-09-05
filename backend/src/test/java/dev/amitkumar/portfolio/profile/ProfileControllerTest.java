@@ -15,6 +15,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import dev.amitkumar.portfolio.contact.ContactMessageRepository;
 import dev.amitkumar.portfolio.experience.ExperienceRepository;
 import dev.amitkumar.portfolio.project.ProjectRepository;
 import dev.amitkumar.portfolio.skill.SkillRepository;
@@ -38,6 +39,9 @@ class ProfileControllerTest {
 
     @MockitoBean
     private SkillRepository skillRepository;
+
+    @MockitoBean
+    private ContactMessageRepository contactMessageRepository;
 
     @Test
     void getProfileWhenPresentReturns200() throws Exception {
